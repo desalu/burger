@@ -5,14 +5,14 @@ var connection = mysql.createConnection({
   port: 3306,
   user: "root",
   password: "12345678",
-  database: "burber_db"
+  database: "burger_db"
 });
 
 connection.connect((err)=> {
   if (err) {
     console.error("error connecting " + err.stack );
   }
-  console.log(`Connected to port: ${connection.port} as id: ${connection.threadId}`);
+  console.log(`${connection.state} as id: ${connection.threadId}`);
 });
 
 module.exports = connection;
